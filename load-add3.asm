@@ -9,10 +9,10 @@ mov [rsp], rax
     mov  rax, [rax]
     nop
     nop
-    nop
-    nop
-    nop
     add  rax, 0
+    nop
+    nop
+    nop
 %endrep
 
     dec rcx
