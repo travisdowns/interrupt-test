@@ -1,10 +1,10 @@
-.PHONY: all
+.PHONY: all clean
 
 ASM_FILES := $(wildcard *.asm)
 EXES:= $(patsubst %.asm,%,$(ASM_FILES))
 
-$(info ASM_FILES=$(ASM_FILES))
-$(info EXES=$(EXES))
+# $(info ASM_FILES=$(ASM_FILES))
+# $(info EXES=$(EXES))
 
 all: $(EXES)
 
