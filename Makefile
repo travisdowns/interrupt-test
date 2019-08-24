@@ -12,8 +12,8 @@ $(EXES) : % : %.o
 	ld $< -o $@
 
 %.o: %.asm header.inc footer.inc
-	nasm -f elf64 -F dwarf -g $<
-	strip --strip-symbol='_start.jump*' --wildcard $@
+	nasm -f elf64 $<
+	#strip --strip-symbol='_start.jump*' --wildcard $@
 
 clean:
 	rm -f *.o

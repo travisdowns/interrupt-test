@@ -7,9 +7,15 @@
 ;
 ; subtracts 128 from rsp
 
+%define nop2 db 0x66, 0x90
+
+%ifndef default_iters
+%define default_iters 10_000_000
+%endif
+
 GLOBAL _start
 _start:
-	mov		rcx, 10_000_000
+	mov		rcx, default_iters
 	cmp		QWORD [rsp], 1 ; argc
 	je    	.atoi_done
 	xor		ecx, ecx
